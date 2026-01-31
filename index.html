@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>For You</title>
+<title>For You 💖</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 body{
@@ -26,11 +26,22 @@ font-size:16px;
 margin:10px;
 cursor:pointer;
 }
+@keyframes bounce{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-8px);}
+}
+.cute-cat{
+width:140px;
+margin:20px auto;
+display:block;
+animation:bounce 2s infinite;
+}
 </style>
 </head>
 <body>
 <div class="container">
 <h2>Hey! I made something for you<br>do you wanna see???</h2>
+<img src="cat.png" class="cute-cat">
 <button onclick="yes()">Yes</button>
 <button onclick="no()">No</button>
 </div>
