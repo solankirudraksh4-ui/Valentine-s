@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>No Again</title>
+<title>No Again 😠</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 body{
@@ -14,6 +14,20 @@ align-items:center;
 height:100vh;
 background:white;
 text-align:center;
+}
+@keyframes angry{
+0%{transform:translateX(0);}
+20%{transform:translateX(-4px);}
+40%{transform:translateX(4px);}
+60%{transform:translateX(-4px);}
+80%{transform:translateX(4px);}
+100%{transform:translateX(0);}
+}
+.angry-bear{
+width:170px;
+margin:20px auto;
+display:block;
+animation:angry .5s infinite;
 }
 button{
 padding:12px 30px;
@@ -28,6 +42,7 @@ cursor:pointer;
 </head>
 <body>
 <div>
+<img src="angry_bear.png" class="angry-bear">
 <h2>did you say no???? 😠</h2>
 <button onclick="location.href='page4.html'">try again</button>
 </div>
