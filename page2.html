@@ -15,6 +15,19 @@ height:100vh;
 background:white;
 text-align:center;
 }
+@keyframes shake{
+0%{transform:translateX(0);}
+25%{transform:translateX(-4px);}
+50%{transform:translateX(4px);}
+75%{transform:translateX(-4px);}
+100%{transform:translateX(0);}
+}
+.angry-cat{
+width:150px;
+margin:20px auto;
+display:block;
+animation:shake .6s infinite;
+}
 button{
 padding:12px 30px;
 border-radius:25px;
@@ -28,8 +41,9 @@ cursor:pointer;
 </head>
 <body>
 <div>
+<img src="cat_no.png" class="angry-cat">
 <h2>HOW DARE YOU?</h2>
 <button onclick="location.href='index.html'">Try again</button>
 </div>
 </body>
-</html>
+  </html>
