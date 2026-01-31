@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Good</title>
+<title>Good ❤️</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 body{
@@ -14,6 +14,17 @@ align-items:center;
 height:100vh;
 background:white;
 text-align:center;
+}
+@keyframes pop{
+0%{transform:scale(.9);}
+50%{transform:scale(1.05);}
+100%{transform:scale(1);}
+}
+.hug-sticker{
+width:180px;
+margin:20px auto;
+display:block;
+animation:pop 1.5s infinite;
 }
 button{
 padding:12px 30px;
@@ -28,6 +39,7 @@ cursor:pointer;
 </head>
 <body>
 <div>
+<img src="hug.png" class="hug-sticker">
 <h2>GOOOOOODDDDD ❤️</h2>
 <button onclick="location.href='page4.html'">Next</button>
 </div>
