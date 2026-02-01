@@ -4,10 +4,11 @@
 <meta charset="UTF-8">
 <title>Final Gift 💝</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 body{
 margin:0;
-font-family:Poppins;
+font-family:Poppins,Arial;
 height:100vh;
 background:#ffd1dc;
 display:flex;
@@ -16,14 +17,96 @@ align-items:center;
 text-align:center;
 overflow:hidden;
 }
-.ticket{
-background:#ffb6c6;
-padding:15px;
-margin:10px;
-border-radius:15px;
+
+.container{
+max-width:800px;
+padding:20px;
 }
+
+/* TICKETS GRID */
+.tickets{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:25px;
+margin-bottom:30px;
+}
+
+/* SINGLE TICKET */
+.ticket{
+background:linear-gradient(135deg,#ffb6c6,#ff8fa6);
+color:#7a1f33;
+border-radius:18px;
+padding:22px;
+position:relative;
+box-shadow:0 0 12px rgba(255,120,150,0.6);
+overflow:hidden;
+animation: glow 2.5s ease-in-out infinite;
+}
+
+/* GLOW EFFECT */
+@keyframes glow{
+0%{box-shadow:0 0 10px rgba(255,120,150,0.4);}
+50%{box-shadow:0 0 20px rgba(255,120,150,0.9);}
+100%{box-shadow:0 0 10px rgba(255,120,150,0.4);}
+}
+
+/* SIDE CUTS */
+.ticket::before,
+.ticket::after{
+content:"";
+position:absolute;
+top:50%;
+width:26px;
+height:26px;
+background:#ffd1dc;
+border-radius:50%;
+transform:translateY(-50%);
+}
+
+.ticket::before{ left:-13px; }
+.ticket::after{ right:-13px; }
+
+/* DOTTED PERFORATION */
+.perf{
+position:absolute;
+top:0;
+bottom:0;
+left:50%;
+border-left:2px dashed rgba(255,255,255,0.7);
+}
+
+/* SERIAL NUMBER */
+.serial{
+position:absolute;
+top:10px;
+right:14px;
+font-size:11px;
+letter-spacing:1px;
+opacity:0.8;
+}
+
+/* TEXT STYLES */
+.small{
+font-size:12px;
+letter-spacing:1px;
+opacity:0.8;
+margin-bottom:6px;
+}
+
+.title{
+font-size:20px;
+font-weight:700;
+margin-bottom:10px;
+}
+
+.desc{
+font-size:14px;
+line-height:1.6;
+}
+
+/* RESTART BUTTON */
 button{
-margin-top:20px;
+margin-top:10px;
 padding:12px 36px;
 border-radius:30px;
 border:none;
@@ -32,6 +115,8 @@ color:#7a1f33;
 font-size:16px;
 cursor:pointer;
 }
+
+/* HEART RAIN */
 .heart{
 position:fixed;
 top:-10px;
@@ -39,23 +124,79 @@ font-size:22px;
 animation:fall linear forwards;
 pointer-events:none;
 }
+
 @keyframes fall{
 to{transform:translateY(110vh);opacity:0;}
 }
 </style>
 </head>
+
 <body>
 
-<div>
-<div class="ticket"><b>HUGS</b><br>unlimited hugs 🫂</div>
-<div class="ticket"><b>MAALKIN SPECIAL</b><br>whatever maalkin says, I'll follow 🫡</div>
-<div class="ticket"><b>KISSES</b><br>infinite kisses whenever maalkin wants 😘💋</div>
-<div class="ticket"><b>ALWAYS AVAILABLE</b><br>this slave of yours will always be available for you 😤</div>
+<div class="container">
+
+<div class="tickets">
+
+<!-- HUGS -->
+<div class="ticket">
+<div class="serial">#VD-001</div>
+<div class="perf"></div>
+<div class="small">FREE TICKET FOR</div>
+<div class="title">HUGS 🎟</div>
+<div class="desc">
+unlimited hugs<br>
+expires: never
+</div>
+</div>
+
+<!-- MAALKIN SPECIAL -->
+<div class="ticket">
+<div class="serial">#VD-002</div>
+<div class="perf"></div>
+<div class="small">FREE TICKET FOR</div>
+<div class="title">MAALKIN SPECIAL 🎟</div>
+<div class="desc">
+whatever maalkin says,<br>
+I'll follow 🫡<br>
+expires: never
+</div>
+</div>
+
+<!-- KISSES -->
+<div class="ticket">
+<div class="serial">#VD-003</div>
+<div class="perf"></div>
+<div class="small">FREE TICKET FOR</div>
+<div class="title">KISSES 🎟</div>
+<div class="desc">
+infinite kisses whenever<br>
+maalkin wants<br>
+expires: never
+</div>
+</div>
+
+<!-- ALWAYS AVAILABLE -->
+<div class="ticket">
+<div class="serial">#VD-004</div>
+<div class="perf"></div>
+<div class="small">FREE TICKET FOR</div>
+<div class="title">ALWAYS AVAILABLE 🎟</div>
+<div class="desc">
+this slave of yours will always<br>
+be available for you<br>
+expires: never
+</div>
+</div>
+
+</div>
+
 <button onclick="restart()">Restart 🔁</button>
+
 </div>
 
 <script>
 const hearts=["🩷","🫶","💝","💖","💕","💞","💓","💗","💘"];
+
 function createHeart(){
 const h=document.createElement("div");
 h.className="heart";
@@ -65,6 +206,7 @@ h.style.animationDuration=(2+Math.random()*2)+"s";
 document.body.appendChild(h);
 setTimeout(()=>h.remove(),4000);
 }
+
 function restart(){
 for(let i=0;i<40;i++){
 setTimeout(createHeart,i*100);
